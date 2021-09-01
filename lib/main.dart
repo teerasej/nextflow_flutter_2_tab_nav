@@ -29,6 +29,35 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          body: TabBarView(
+            children: [
+              Text('1'),
+              Text('2'),
+              Text('3'),
+            ],
+          ),
+          bottomNavigationBar: Material(
+            color: Colors.blue,
+            child: TabBar(
+              tabs: [
+                Tab(
+                  text: 'Home',
+                  icon: Icon(Icons.home),
+                ),
+                Tab(
+                  text: 'Timeline',
+                  icon: Icon(Icons.timeline),
+                ),
+                Tab(
+                  text: 'Setting',
+                  icon: Icon(Icons.settings),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
